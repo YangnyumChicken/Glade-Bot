@@ -12,8 +12,8 @@ str.startswith 메서드를 사용할 필요가 없습니다.
 '''
 
 @bot.event
-async def on_ready():
-    print('Logged in as')
+async def on_ready(): # 로그인 성공 시
+    print('Logged in as') # 로그인에 완료했습니다.
     print(bot.user.name) # 토큰으로 로그인 된 bot 객체에서 discord.User 클래스를 가져온 뒤 name 프로퍼티를 출력
     print(bot.user.id) # 위와 같은 클래스에서 id 프로퍼티 출력
     print('------')
@@ -26,5 +26,8 @@ async def ping(ctx):
 async def _1234(ctx):
     await ctx.send("5678")
 #파이썬 문법에 따라 함수를 만들 때에는 첫글자에는 숫자를 넣을 수 없는데, 숫자를 사용하고싶다면 함수 이름 자리는 다른 아무것으로 대체하고 괄호 안에 name=""을 사용하여 명령어를 제작할 수 있다.
+token = open("token.txt","r").readline() # 토큰 외부 참조 코드
+bot.run(token)
 
-bot.run('MTAyMjE3MjY4ODk4NDMzMDI1Mg.G2Bjd0.nQYujQkx0wEmdWm0Y6t2BHc1nnxwvEodNmko1g')
+
+# pip install python-dotenv로 토큰 라이브러리 설치!
